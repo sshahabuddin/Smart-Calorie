@@ -40,5 +40,29 @@ app.post('/signUpService', jsonParser,function (req, res) {
     dbFunctions.signUpService(req,res);
 });
 
+app.post('/updateService', jsonParser,function (req, res) {
+    // do something
+    //if (valFunctions.checkInputDataNULL(req,res)) return false;
+    //if (valFunctions.checkInputDataQuality(req,res)) return false;
+    //if (valFunctions.checkJWTToken(req,res)) return false;
+    //if (valFunctions.checkUserAuthRole(req,res)) return false;
+
+    var dbFunctions = require('./models/connector');
+    console.log("Hello update");
+    dbFunctions.updateService(req,res);
+});
+
+app.post('/displayService', jsonParser,function (req, res) {
+    // do something
+    //if (valFunctions.checkInputDataNULL(req,res)) return false;
+    //if (valFunctions.checkInputDataQuality(req,res)) return false;
+    //if (valFunctions.checkJWTToken(req,res)) return false;
+    //if (valFunctions.checkUserAuthRole(req,res)) return false;
+
+    var dbFunctions = require('./models/connector');
+    console.log("Hello display");
+    dbFunctions.displayService(req,res);
+});
+
 app.use('/', (req,res) => res.send("Welocme GPS Mobile Tracker App"));
 app.listen(process.env.PORT, () => console.log('PLS Server is ready on localhost:' + process.env.PORT));
